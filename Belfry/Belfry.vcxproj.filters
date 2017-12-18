@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\component">
+      <UniqueIdentifier>{8f69aaa1-36c0-44e4-90b0-c02fce775ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{61583400-af30-496b-9526-aaa2d5ff2bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{e608a30f-03ce-4d68-8bfe-8fbfd99f42c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\test">
+      <UniqueIdentifier>{b8fd9589-092d-4902-8f4a-121661e47d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\world">
+      <UniqueIdentifier>{da8d8ea3-1c6a-4162-acf4-3dea77bdaad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\object\factory">
+      <UniqueIdentifier>{fd5b476e-ff88-4369-aab3-096d27262434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\world">
+      <UniqueIdentifier>{9e0d36eb-ad9b-4a72-bacd-fec28719af2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\world\initializer">
+      <UniqueIdentifier>{b0d8bee7-4e2a-4e99-bbfc-01d3857ac9c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\texture">
+      <UniqueIdentifier>{90dc3d3f-3261-485d-b25d-589f73f1f565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shader">
+      <UniqueIdentifier>{e28c82f9-e83f-4a28-8f96-0cd0e031207b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfComponent.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfObject.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshHolder.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfObjectFactory.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfWorld.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfObjectFactoryManager.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfWorldFactory.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="InputController.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowContainerFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfWorldInitializer.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultBlfWorldInitializer.h">
+      <Filter>Header Files\world\initializer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLWindowContainer.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="FppActorFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlfObject.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformTest.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="BlfObjectTest.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="BlfWorld.cpp">
+      <Filter>Source Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="BlfObjectFactoryManagerTest.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
