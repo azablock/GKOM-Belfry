@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BlfComponent.h" />
+    <ClInclude Include="BlfComponentBuilder.h" />
     <ClInclude Include="BlfObject.h" />
     <ClInclude Include="BlfObjectFactory.h" />
     <ClInclude Include="BlfObjectFactoryManager.h" />
@@ -161,14 +162,22 @@
     <ClInclude Include="BlfWorldFactory.h" />
     <ClInclude Include="BlfWorldInitializer.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CubeFactory.h" />
     <ClInclude Include="FppActorFactory.h" />
     <ClInclude Include="DefaultBlfWorldInitializer.h" />
     <ClInclude Include="GLWindowContainer.h" />
     <ClInclude Include="InputController.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshHolder.h" />
+    <ClInclude Include="Movement.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="CubeMeshFactory.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="MeshFactory.h" />
     <ClInclude Include="WindowContainerFactory.h" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +192,14 @@
     <ProjectReference Include="..\GoogleTest\GoogleTest.vcxproj">
       <Project>{fc52a46e-9db1-4f16-b1d0-b1d873e02b34}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sampleFrag.frag" />
+    <None Include="sampleVert.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Brick1.png" />
+    <Image Include="StoneRoad.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

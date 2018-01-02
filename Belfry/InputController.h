@@ -10,7 +10,8 @@ public:
     auto windowContainer = world->getBlfObjectByTag("WindowContainer");
     this->_glWindowContainer = windowContainer->getComponent<GLWindowContainer>();
     
-    glfwSetKeyCallback(this->_glWindowContainer->window(), handleInput);
+    //to tez dziala bo mamy w GLWindowContainer glfwPollEvents();
+    //glfwSetKeyCallback(this->_glWindowContainer->window(), handleInput);
   
     _movementSpeed = 0.05f;
   }

@@ -43,6 +43,12 @@
     <Filter Include="Resource Files\shader">
       <UniqueIdentifier>{e28c82f9-e83f-4a28-8f96-0cd0e031207b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{0d2341ac-f2a5-4685-a439-66754b57cb85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\mesh">
+      <UniqueIdentifier>{48c2068f-c2a8-44a5-8989-b49b6a3b212a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -96,6 +102,33 @@
     <ClInclude Include="FppActorFactory.h">
       <Filter>Header Files\object\factory</Filter>
     </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="BlfComponentBuilder.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="Movement.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFactory.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMeshFactory.h">
+      <Filter>Header Files\model\mesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -116,5 +149,21 @@
     <ClCompile Include="BlfObjectFactoryManagerTest.cpp">
       <Filter>Source Files\test</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sampleFrag.frag">
+      <Filter>Resource Files\shader</Filter>
+    </None>
+    <None Include="sampleVert.vert">
+      <Filter>Resource Files\shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="StoneRoad.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="Brick1.png">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
   </ItemGroup>
 </Project>

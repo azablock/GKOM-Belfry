@@ -1,6 +1,6 @@
 #pragma once
 
-#define GLEW_STATIC
+//#define GLEW_STATIC
 #include <iostream>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -10,8 +10,8 @@ class GLWindowContainer : public BlfComponent {
 
 public:
   const void awake() {
-    if (glfwInit() != GL_TRUE)
-      throw exception("GLFW initialization failed");
+   // if (glfwInit() != GL_TRUE)
+     // throw exception("GLFW initialization failed");
 
     _windowWidth = 1280;
     _windowHeight = 800;
@@ -23,10 +23,10 @@ public:
 
     glfwMakeContextCurrent(_window);
 
-    glewExperimental = GL_TRUE;
+//    glewExperimental = GL_TRUE;
 
-    if (glewInit() != GLEW_OK)
-      throw exception("GLEW Initialization failed");
+  //  if (glewInit() != GLEW_OK)
+    //  throw exception("GLEW Initialization failed");
 
     glViewport(0, 0, _windowWidth, _windowHeight);
 
@@ -36,11 +36,15 @@ public:
   };
 
   const void update() {
-    //todo glfwWindowShouldClose(_window)
+    //glfwWindowShouldClose(_window);
+    glfwPollEvents();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    glfwSwapBuffers(_window);
   };
+
+  const void lateUpdate() {
+    glfwSwapBuffers(_window);
+  }
 
   GLFWwindow* window() const {
     return _window;

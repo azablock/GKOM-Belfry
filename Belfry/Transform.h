@@ -6,20 +6,23 @@
 #include "BlfComponent.h"
 
 class Transform : public BlfComponent {
-public:
-  void const awake() {}
+
+public:  
+  void const awake() {
+    position = glm::vec3(0.0f, 0.0f, 0.0f);
+    scale = glm::vec3(1.0f, 1.0f, 1.0f);
+    rotation = glm::vec3(1.0f, 1.0f, 1.0f);
+  }
+
   void const update() {}
 
-  const void translate(glm::vec3 vector);
-  const void scale(glm::vec3 vector);
-  const void rotate(glm::vec3 vector);
+  //to moze w movement?
+ // const void translate(glm::vec3 vector);
+  //const void scale(glm::vec3 vector);
+  //const void rotate(glm::vec3 vector);
+  //
 
-  glm::vec3 position() const;
-  glm::vec3 scale() const;
-  glm::vec3 rotation() const;
-
-private:
-  glm::vec3 _position;
-  glm::vec3 _scale;
-  glm::vec3 _rotation;
+  glm::vec3 position;
+  glm::vec3 scale;
+  glm::vec3 rotation;
 };

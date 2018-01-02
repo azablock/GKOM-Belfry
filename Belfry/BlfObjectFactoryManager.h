@@ -4,8 +4,8 @@
 #include <typeindex>
 #include "BlfObjectFactory.h"
 #include "FppActorFactory.h"
+#include "CubeFactory.h"
 #include "WindowContainerFactory.h"
-
 
 //todo singleton
 class BlfObjectFactoryManager {
@@ -15,6 +15,7 @@ public:
 
     add<FppActorFactory>();
     add<WindowContainerFactory>();
+    add<CubeFactory>();
   }
 
   template <typename T> BlfObject* newInstanceFrom() {

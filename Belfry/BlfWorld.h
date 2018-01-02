@@ -1,6 +1,6 @@
 #pragma once
 
-//#define GLEW_STATIC
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -42,6 +42,11 @@ public:
       object->update();
   }
 
+  const void lateUpdate() const {
+    for (auto const& object : _objects)
+      object->lateUpdate();
+  }
+
   const void exit() {
     _isAlive = false;
   }
@@ -55,8 +60,6 @@ public:
     return iterator != std::end(_objectsByTags) ? iterator->second : nullptr;
   }
 
-  int init() const; //todo - to remove
-
 private:
 
   BlfWorld() {
@@ -65,7 +68,6 @@ private:
   }
 
   static BlfWorld* _instance;
-
   list<BlfObject*> _objects;
   map<std::string, BlfObject*> _objectsByTags;
   bool _isAlive;

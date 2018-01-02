@@ -17,17 +17,19 @@ public:
 
   ~BlfObject();
 
-  template <typename T> const void addComponent(T* component) {
+  template <typename T> BlfObject* addComponent(T* component) {
     dynamic_cast<BlfComponent*>(component)->setParent(this);
     _components[typeid(T)] = component;
+
+    return this;
   }
 
-  template <typename T> const void addComponent() {
+  template <typename T> BlfObject* addComponent() {
     T* component = new T();
-    addComponent(component);
+    return addComponent(component);
   }
 
-  template <typename T> const T* getComponent() const {
+  template <typename T> T* getComponent() const {
     auto iterator = _components.find(typeid(T));
     return iterator != std::end(_components) ? dynamic_cast<T*>(iterator->second) : nullptr;
   }
@@ -38,8 +40,15 @@ public:
   }
 
   const void update() {
-    for (auto const& entry : _components)
+    for (auto const& entry : _components) {
       entry.second->update();
+    }
+  }
+
+  const void lateUpdate() {
+    for (auto const& entry : _components) {
+      entry.second->lateUpdate();
+    }
   }
 
   map<type_index, BlfComponent*> components() const;

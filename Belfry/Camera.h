@@ -14,7 +14,7 @@ public:
 
   const void update() {
     auto transform = _parent->getComponent<Transform>();
-    _view = glm::lookAt(transform->position(), _lookDirection, _cameraUp);
+    _view = glm::lookAt(transform->position, _lookDirection, _cameraUp);
   }
 
 private:
