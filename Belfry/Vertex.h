@@ -4,6 +4,6 @@
 
 struct Vertex {
   glm::vec3 position;
-  glm::vec3 normal;
+  glm::vec3 normal; //color data
   glm::vec2 textureCoordinates;
 };

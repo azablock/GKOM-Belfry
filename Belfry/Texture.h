@@ -1,8 +1,10 @@
 #pragma once
 
 #include <iostream>
+#include <GL\glew.h>
 
 struct Texture {
-  unsigned int id;
-  std::string type;
+  GLuint id;
+  std::string imagePath;
+  //std::string type;
 };

@@ -5,7 +5,6 @@
 #include "BlfObjectFactory.h"
 #include "FppActorFactory.h"
 #include "CubeFactory.h"
-#include "WindowContainerFactory.h"
 
 //todo singleton
 class BlfObjectFactoryManager {
@@ -14,7 +13,6 @@ public:
     _factories = {};
 
     add<FppActorFactory>();
-    add<WindowContainerFactory>();
     add<CubeFactory>();
   }
 

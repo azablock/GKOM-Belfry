@@ -49,6 +49,9 @@
     <Filter Include="Header Files\model\mesh">
       <UniqueIdentifier>{48c2068f-c2a8-44a5-8989-b49b6a3b212a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\misc">
+      <UniqueIdentifier>{accb254d-e3b0-475b-a3db-a70c828183aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -84,9 +87,6 @@
     <ClInclude Include="InputController.h">
       <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="WindowContainerFactory.h">
-      <Filter>Header Files\object\factory</Filter>
-    </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -95,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="DefaultBlfWorldInitializer.h">
       <Filter>Header Files\world\initializer</Filter>
-    </ClInclude>
-    <ClInclude Include="GLWindowContainer.h">
-      <Filter>Header Files\component</Filter>
     </ClInclude>
     <ClInclude Include="FppActorFactory.h">
       <Filter>Header Files\object\factory</Filter>
@@ -129,6 +126,12 @@
     <ClInclude Include="CubeMeshFactory.h">
       <Filter>Header Files\model\mesh</Filter>
     </ClInclude>
+    <ClInclude Include="Contants.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -149,6 +152,9 @@
     <ClCompile Include="BlfObjectFactoryManagerTest.cpp">
       <Filter>Source Files\test</Filter>
     </ClCompile>
+    <ClCompile Include="glmTest.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="sampleFrag.frag">
@@ -163,6 +169,9 @@
       <Filter>Resource Files\texture</Filter>
     </Image>
     <Image Include="Brick1.png">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="iipw.png">
       <Filter>Resource Files\texture</Filter>
     </Image>
   </ItemGroup>

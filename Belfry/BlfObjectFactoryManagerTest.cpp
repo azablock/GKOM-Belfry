@@ -1,5 +1,12 @@
+
+#define GLEW_STATIC
+#include <GL/glew.h>
 #include "gtest/gtest.h"
 #include "BlfObjectFactoryManager.h"
+
+
+// COS SIE WALI Z LINKOWANIEM OPEN_GL'A
+
 
 class BlfObjectFactoryManagerTest : public ::testing::Test {
 protected:

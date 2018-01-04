@@ -52,7 +52,7 @@ int main()
 
 		// Set up vertex data 
 		GLfloat vertices[] = {
-			// coordinates			// color			// texture
+			// coordinates			  // color			    // texture
 			 0.25f,  0.5f,  0.0f,	1.0f, 0.0f, 0.0f,	1.0f,  0.0f,	
 			-0.75f,  0.5f,  0.0f,	0.0f, 1.0f, 0.0f,	0.0f,  0.0f,
 			-0.25f, -0.5f,  0.0f,	0.0f, 0.0f, 1.0f,	0.0f,  1.0f,

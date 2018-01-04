@@ -1,9 +1,5 @@
 #pragma once
 
-#define GLEW_STATIC
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <iostream>
 #include <list>
 #include <map>
 #include "BlfObject.h"
@@ -18,7 +14,7 @@ public:
 
   static BlfWorld* instance();
 
-  const void add(BlfObject* object) {
+  const BlfObject* add(BlfObject* object) {
     string tag = object->tag();
 
     _objects.push_back(object);
@@ -26,6 +22,8 @@ public:
     if (!tag.empty()) {
       _objectsByTags[tag] = object;
     }
+
+    return object;
   }
 
   const void addFrom(BlfObjectFactory* factory) {

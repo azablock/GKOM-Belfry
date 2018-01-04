@@ -1,14 +1,14 @@
 #pragma once
+
+#include <GLFW/glfw3.h>
 #include "BlfComponent.h"
 #include "BlfWorld.h"
-#include "GLWindowContainer.h"
 
 class InputController : public BlfComponent {
 public:
   const void awake() {
     auto world = BlfWorld::instance();
-    auto windowContainer = world->getBlfObjectByTag("WindowContainer");
-    this->_glWindowContainer = windowContainer->getComponent<GLWindowContainer>();
+   // auto windowContainer = world->getBlfObjectByTag("WindowContainer");
     
     //to tez dziala bo mamy w GLWindowContainer glfwPollEvents();
     //glfwSetKeyCallback(this->_glWindowContainer->window(), handleInput);
@@ -26,8 +26,8 @@ public:
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
       cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;*/
 
-    if (glfwGetKey(_glWindowContainer->window(), GLFW_KEY_W) == GLFW_PRESS)
-      cout << "W pressed" << endl;
+   // if (glfwGetKey(_glWindowContainer->window, GLFW_KEY_W) == GLFW_PRESS)
+     // cout << "W pressed" << endl;
   }
 
 private:
@@ -35,6 +35,5 @@ private:
     cout << "InputController: key -> " << key << endl;
   }
 
-  const GLWindowContainer* _glWindowContainer;
   float _movementSpeed; //todo move to other component ei. Movement, which has movementSpeedVector
 };

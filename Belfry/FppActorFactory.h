@@ -9,7 +9,7 @@
 class FppActorFactory : public BlfObjectFactory {
 public:
   BlfObject* newInstance() const {
-    auto fppActor = new BlfObject();
+    auto fppActor = new BlfObject("FppActor");
 
     fppActor->addComponent<Transform>()
             ->addComponent<Camera>()

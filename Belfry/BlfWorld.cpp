@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #include "BlfWorld.h"
 
 using namespace std;
