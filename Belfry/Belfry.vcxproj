@@ -163,7 +163,7 @@
     <ClInclude Include="BlfWorldInitializer.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Contants.h" />
-    <ClInclude Include="CubeFactory.h" />
+    <ClInclude Include="RecangleFactory.h" />
     <ClInclude Include="FppActorFactory.h" />
     <ClInclude Include="DefaultBlfWorldInitializer.h" />
     <ClInclude Include="InputController.h" />
@@ -174,7 +174,7 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="CubeMeshFactory.h" />
+    <ClInclude Include="RectangleMeshFactory.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vertex.h" />

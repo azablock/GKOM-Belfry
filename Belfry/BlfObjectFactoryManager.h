@@ -2,18 +2,20 @@
 
 #include <map>
 #include <typeindex>
+#include "Singleton.h"
 #include "BlfObjectFactory.h"
 #include "FppActorFactory.h"
-#include "CubeFactory.h"
+#include "RecangleFactory.h"
 
-//todo singleton
-class BlfObjectFactoryManager {
+class BlfObjectFactoryManager : public Singleton<BlfObjectFactoryManager> {
 public:
+  friend class Singleton<BlfObjectFactoryManager>;
+
   BlfObjectFactoryManager() {
     _factories = {};
 
     add<FppActorFactory>();
-    add<CubeFactory>();
+    add<RecangleFactory>();
   }
 
   template <typename T> BlfObject* newInstanceFrom() {

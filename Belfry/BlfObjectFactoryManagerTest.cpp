@@ -4,9 +4,7 @@
 #include "gtest/gtest.h"
 #include "BlfObjectFactoryManager.h"
 
-
 // COS SIE WALI Z LINKOWANIEM OPEN_GL'A
-
 
 class BlfObjectFactoryManagerTest : public ::testing::Test {
 protected:
@@ -15,7 +13,7 @@ protected:
 
   BlfObjectFactoryManagerTest() {
     // You can do set-up work for each test here.
-    factoryManager = new BlfObjectFactoryManager();
+    //factoryManager = BlfObjectFactoryManager::instance();
   }
 
   virtual ~BlfObjectFactoryManagerTest() {
@@ -36,12 +34,12 @@ protected:
   }
 
   // Objects declared here can be used by all tests in the test case for Foo.
-  BlfObjectFactoryManager* factoryManager;
+  //BlfObjectFactoryManager& factoryManager;
 };
 
 TEST_F(BlfObjectFactoryManagerTest, initTest) {
   //given
-  auto fppActor = factoryManager->newInstanceFrom<FppActorFactory>();
+  auto fppActor = BlfObjectFactoryManager::instance().newInstanceFrom<FppActorFactory>();
   
   //when
 

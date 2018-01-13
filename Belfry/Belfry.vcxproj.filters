@@ -46,11 +46,20 @@
     <Filter Include="Header Files\model">
       <UniqueIdentifier>{0d2341ac-f2a5-4685-a439-66754b57cb85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\model\mesh">
-      <UniqueIdentifier>{48c2068f-c2a8-44a5-8989-b49b6a3b212a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\misc">
       <UniqueIdentifier>{accb254d-e3b0-475b-a3db-a70c828183aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\mesh">
+      <UniqueIdentifier>{dfb626d8-f521-4f4b-b586-1bc6d6e41332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\mesh\mesh_factory">
+      <UniqueIdentifier>{48c2068f-c2a8-44a5-8989-b49b6a3b212a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\shader">
+      <UniqueIdentifier>{38f8a564-ab94-4d80-9176-7f815ba97693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\window">
+      <UniqueIdentifier>{76660995-ed97-438e-80ab-a6513b788a10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,32 +108,11 @@
     <ClInclude Include="FppActorFactory.h">
       <Filter>Header Files\object\factory</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>Header Files\model</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files\model</Filter>
-    </ClInclude>
     <ClInclude Include="BlfComponentBuilder.h">
       <Filter>Header Files\component</Filter>
     </ClInclude>
     <ClInclude Include="Movement.h">
       <Filter>Header Files\component</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h">
-      <Filter>Header Files\model</Filter>
-    </ClInclude>
-    <ClInclude Include="MeshFactory.h">
-      <Filter>Header Files\model</Filter>
-    </ClInclude>
-    <ClInclude Include="CubeFactory.h">
-      <Filter>Header Files\object\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files\model</Filter>
-    </ClInclude>
-    <ClInclude Include="CubeMeshFactory.h">
-      <Filter>Header Files\model\mesh</Filter>
     </ClInclude>
     <ClInclude Include="Contants.h">
       <Filter>Header Files\misc</Filter>
@@ -132,8 +120,29 @@
     <ClInclude Include="TextureLoader.h">
       <Filter>Header Files\misc</Filter>
     </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\model\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFactory.h">
+      <Filter>Header Files\model\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\model\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\model\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\model\shader</Filter>
+    </ClInclude>
     <ClInclude Include="WindowContainer.h">
-      <Filter>Header Files\world</Filter>
+      <Filter>Header Files\model\window</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleMeshFactory.h">
+      <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="RecangleFactory.h">
+      <Filter>Header Files\object\factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

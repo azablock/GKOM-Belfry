@@ -57,7 +57,6 @@ public:
     
     shader->use();
     
-    
     //-------------------------
     GLuint modelLoc = glGetUniformLocation(shader->id(), "model");
     GLuint viewLoc = glGetUniformLocation(shader->id(), "view");
@@ -67,18 +66,13 @@ public:
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(_camera->view()));
     //-------------------------
 
-
     glBindVertexArray(vao);
-    
-    
+ 
     //-------------------------
     //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->position));
     glm::mat4 modelTrans;
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelTrans));
-
-
     //-------------------------
-
 
     glDrawElements(GL_TRIANGLES, mesh->indices.size(), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);

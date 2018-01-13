@@ -3,17 +3,17 @@
 #include "BlfObjectFactory.h"
 #include "Transform.h"
 #include "MeshHolder.h"
-#include "CubeMeshFactory.h"
+#include "RectangleMeshFactory.h"
 
-class CubeFactory : public BlfObjectFactory {
+class RecangleFactory : public BlfObjectFactory {
 public:
   BlfObject* newInstance() const {
     auto cube = new BlfObject();
 
     //todo to be removed
-    auto cubeMeshFactory = new CubeMeshFactory();
+    auto rectangleMeshFactory = new RectangleMeshFactory();
     //
-    auto mesh = cubeMeshFactory->newInstance();
+    auto mesh = rectangleMeshFactory->newInstance();
 
     cube
       ->addComponent<Transform>()

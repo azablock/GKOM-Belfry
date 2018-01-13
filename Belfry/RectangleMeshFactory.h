@@ -2,7 +2,7 @@
 
 #include "MeshFactory.h"
 
-class CubeMeshFactory : public MeshFactory {
+class RectangleMeshFactory : public MeshFactory {
 public:
 
   Mesh* newInstance() {
@@ -21,22 +21,22 @@ public:
     std::vector<Vertex> vertices;
     
     Vertex vertex1;
-    vertex1.position = glm::vec3(0.5f, 0.5f, 0.0f);
+    vertex1.position = glm::vec3(1.0f, 1.0f, 0.0f);
     vertex1.normal = glm::vec3(1.0f, 0.0f, 0.0f);
     vertex1.textureCoordinates = glm::vec2(1.0f, 1.0f);
 
     Vertex vertex2;
-    vertex2.position = glm::vec3(-0.5f, 0.5f, 0.0f);
+    vertex2.position = glm::vec3(-1.0f, 1.0f, 0.0f);
     vertex2.normal = glm::vec3(0.0f, 1.0f, 0.0f);
     vertex2.textureCoordinates = glm::vec2(1.0f, 0.0f);
 
     Vertex vertex3;
-    vertex3.position = glm::vec3(-0.5f, -0.5f, 0.0f);
+    vertex3.position = glm::vec3(-1.0f, -1.0f, 0.0f);
     vertex3.normal = glm::vec3(0.0f, 0.0f, 1.0f);
     vertex3.textureCoordinates = glm::vec2(0.0f, 0.0f);
 
     Vertex vertex4;
-    vertex4.position = glm::vec3(0.5f, -0.5f, 0.0f);
+    vertex4.position = glm::vec3(1.0f, -1.0f, 0.0f);
     vertex4.normal = glm::vec3(1.0f, 0.0f, 1.0f);
     vertex4.textureCoordinates = glm::vec2(0.0f, 1.0f);
 

@@ -7,8 +7,10 @@ class DefaultBlfWorldInitializer : public BlfWorldInitializer {
 
 public:
   void init(BlfWorld& world) {
-    world.add(blfObjectFactoryManager->newInstanceFrom<FppActorFactory>());
-    world.add(blfObjectFactoryManager->newInstanceFrom<CubeFactory>());
+    BlfObjectFactoryManager& blfObjectFactoryManager = BlfObjectFactoryManager::instance();
+
+    world.add(blfObjectFactoryManager.newInstanceFrom<FppActorFactory>());
+    world.add(blfObjectFactoryManager.newInstanceFrom<RecangleFactory>());
   }
 
   void setup() {
