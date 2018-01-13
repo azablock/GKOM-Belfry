@@ -20,6 +20,11 @@ public:
     //_movementVector += delta;
   }
 
+  // const void translate(glm::vec3 vector);
+  //const void scale(glm::vec3 vector);
+  //const void rotate(glm::vec3 vector);
+  //
+
 private:
   glm::vec3* _movementVector;
   Transform* _transform;

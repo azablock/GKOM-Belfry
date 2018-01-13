@@ -16,12 +16,6 @@ public:
 
   void const update() {}
 
-  //to moze w movement?
- // const void translate(glm::vec3 vector);
-  //const void scale(glm::vec3 vector);
-  //const void rotate(glm::vec3 vector);
-  //
-
   glm::vec3 position;
   glm::vec3 scale;
   glm::vec3 rotation;

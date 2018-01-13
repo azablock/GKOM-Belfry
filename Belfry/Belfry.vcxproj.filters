@@ -132,6 +132,9 @@
     <ClInclude Include="TextureLoader.h">
       <Filter>Header Files\misc</Filter>
     </ClInclude>
+    <ClInclude Include="WindowContainer.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -154,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="glmTest.cpp">
       <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

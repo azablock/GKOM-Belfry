@@ -6,9 +6,9 @@
 class DefaultBlfWorldInitializer : public BlfWorldInitializer {
 
 public:
-  void init(BlfWorld* world) {
-    world->add(blfObjectFactoryManager->newInstanceFrom<FppActorFactory>());
-    world->add(blfObjectFactoryManager->newInstanceFrom<CubeFactory>());
+  void init(BlfWorld& world) {
+    world.add(blfObjectFactoryManager->newInstanceFrom<FppActorFactory>());
+    world.add(blfObjectFactoryManager->newInstanceFrom<CubeFactory>());
   }
 
   void setup() {
@@ -17,12 +17,12 @@ public:
 
 private:
   void setupFppActor() {
-    auto fppActor = BlfWorld::instance()->getBlfObjectByTag("FppActor");
+    auto fppActor = BlfWorld::instance().getBlfObjectByTag("FppActor");
     
     auto transform = fppActor->getComponent<Transform>();
-    transform->position += glm::vec3(0.0f, -5.0f, 7.0f);
+    transform->position += glm::vec3(0.0f, 0.0f, 7.0f);
    
     auto camera = fppActor->getComponent<Camera>();
-    camera->changeLookDirection(glm::vec3(0.0f, 2.0f, 0.0f));
+    camera->changeLookDirection(glm::vec3(0.0f, 0.0f, 0.0f));
   }
 };

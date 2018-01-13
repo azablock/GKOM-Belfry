@@ -4,15 +4,17 @@
 #include <map>
 #include "BlfObject.h"
 #include "BlfObjectFactory.h"
+#include <GLFW/glfw3.h>
+#include "Singleton.h"
 
-class BlfWorld {
+class BlfWorld : public Singleton<BlfWorld> {
 public:
+
+  friend class Singleton<BlfWorld>;
 
   ~BlfWorld() {
     _objects.clear();
   }
-
-  static BlfWorld* instance();
 
   const BlfObject* add(BlfObject* object) {
     string tag = object->tag();
@@ -59,45 +61,12 @@ public:
   }
 
 private:
-
   BlfWorld() {
     _objects = {};
     _isAlive = true;
   }
 
-  static BlfWorld* _instance;
   list<BlfObject*> _objects;
   map<std::string, BlfObject*> _objectsByTags;
   bool _isAlive;
 };
-
-//
-//class Singleton
-//{
-//private:
-//  /* Here will be the instance stored. */
-//  static Singleton* instance;
-//
-//  /* Private constructor to prevent instancing. */
-//  Singleton();
-//
-//public:
-//  /* Static access method. */
-//  static Singleton* getInstance();
-//};
-//
-///* Null, because instance will be initialized on demand. */
-//Singleton* Singleton::instance = 0;
-//
-//Singleton* Singleton::getInstance()
-//{
-//  if (instance == 0)
-//  {
-//    instance = new Singleton();
-//  }
-//
-//  return instance;
-//}
-//
-//Singleton::Singleton()
-//{}

@@ -45,7 +45,7 @@ public:
 
     TextureLoader::load(mesh->texture);
 
-    auto fppActor = BlfWorld::instance()->getBlfObjectByTag("FppActor");
+    auto fppActor = BlfWorld::instance().getBlfObjectByTag("FppActor");
     _camera = fppActor->getComponent<Camera>();
     _transform = fppActor->getComponent<Transform>();
   }
