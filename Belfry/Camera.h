@@ -2,6 +2,8 @@
 
 #include <glm/glm.hpp>
 #include <GL/glew.h>
+#include <GL/GLU.h>
+#include <GL\GL.h>
 #include "BlfComponent.h"
 #include "BlfWorld.h"
 #include "Transform.h"

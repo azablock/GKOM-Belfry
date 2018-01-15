@@ -54,7 +54,7 @@ public:
     for (std::vector<glm::vec3>::iterator it = geometryVertices.begin(); it != geometryVertices.end(); ++it) {
       Vertex vertex;
       vertex.position = *it;
-      vertex.textureCoordinates = glm::vec2(1.0f, 1.0f);
+      vertex.textureCoordinates = glm::vec2(0.0f, 1.0f);
       
       vertices.push_back(vertex);
     }

@@ -48,21 +48,25 @@ public:
   }
 
   const void update() {
-    if (parent()->tag().compare("FppActor")) {
+    draw();
+
+   /* if (parent()->tag().compare("FppActor")) {
       draw();
     }
     else {
-      transform();
-    }
+      transformSelf();
+    }*/
+  }
+
+  const void lateUpdate() {
+
   }
 
   Mesh* mesh;
   Shader* shader;
 
 private:
-  
-
-  void transform() {
+  void transformSelf() {
     glPushMatrix();
     
     glLoadIdentity();
@@ -101,9 +105,9 @@ private:
     glBindVertexArray(vao);
 
     //-------------------------
-    glm::mat4 modelTrans;
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelTrans));
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->transformModel));
+    //glm::mat4 modelTrans;
+    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelTrans));
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->transformModel));
     //-------------------------
 
     //glDrawArrays(GL_TRIANGLES, 0, (GLuint)mesh->vertices.size() * 5); // 5x GLfloat

@@ -6,7 +6,7 @@
 #include "RectangleMeshFactory.h"
 
 class RecangleFactory : public BlfObjectFactory {
-public:
+private:
   BlfObject* fill(BlfObject* rectangle) const {
     auto rectangleMeshFactory = new RectangleMeshFactory();
     auto mesh = rectangleMeshFactory->newInstance();

@@ -5,6 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "BlfComponent.h"
+#include "BlfObject.h"
 
 class Transform : public BlfComponent {
 
@@ -17,19 +18,20 @@ public:
   }
 
   void const update() {
+    glm::mat4 transform;
+
     //rotate
     if (glm::length(rotation) != 0.0f)
-      transformModel = glm::rotate(transformModel, rotationAngle, rotation);
+      transform = glm::rotate(transform, rotationAngle, rotation);
 
     //scale
-    transformModel = glm::scale(transformModel, scale);
+    transform = glm::scale(transform, scale);
 
     //translate
-    transformModel = glm::translate(transformModel, position);
-  }
+    if (glm::length(position) != 0.0f)
+      transform = glm::translate(transform, position);
 
-  void const lateUpdate() {
-    awake(); //todo inaczej to jakos 
+    transformModel = transform;
   }
 
   glm::vec3 position;//translate
