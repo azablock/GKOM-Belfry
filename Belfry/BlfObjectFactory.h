@@ -4,5 +4,11 @@
 
 class BlfObjectFactory {
 public:
-  virtual BlfObject* newInstance() const = 0;
+  virtual BlfObject* newInstance(std::string tag = "") const {
+    auto object = tag.empty() ? new BlfObject() : new BlfObject(tag);
+    return fill(object);
+  };
+
+protected:
+  virtual BlfObject* fill(BlfObject* object) const = 0;
 };

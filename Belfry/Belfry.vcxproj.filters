@@ -144,6 +144,12 @@
     <ClInclude Include="RecangleFactory.h">
       <Filter>Header Files\object\factory</Filter>
     </ClInclude>
+    <ClInclude Include="CubeFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMeshFactory.h">
+      <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

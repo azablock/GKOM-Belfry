@@ -7,21 +7,17 @@
 
 class RecangleFactory : public BlfObjectFactory {
 public:
-  BlfObject* newInstance() const {
-    auto cube = new BlfObject();
-
-    //todo to be removed
+  BlfObject* fill(BlfObject* rectangle) const {
     auto rectangleMeshFactory = new RectangleMeshFactory();
-    //
     auto mesh = rectangleMeshFactory->newInstance();
 
-    cube
+    rectangle
       ->addComponent<Transform>()
       ->addComponent<MeshHolder>();
 
-    cube->getComponent<MeshHolder>()->mesh = mesh;
-    cube->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
+    rectangle->getComponent<MeshHolder>()->mesh = mesh;
+    rectangle->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
 
-    return cube;
+    return rectangle;
   };
 };

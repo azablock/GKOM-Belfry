@@ -17,11 +17,22 @@ public:
     //to tez dziala bo mamy w GLWindowContainer glfwPollEvents();
     //  glfwSetCursorPosCallback(_window, mouseMovementCallback);
     //glfwSetKeyCallback(this->_glWindowContainer->window(), handleInput);
+
+
+    cube = BlfWorld::instance().getBlfObjectByTag("Cube");
   }
 
   const void update() {
     handleMouse();
     handleKeyboard();
+
+
+    if (glfwGetKey(_window, GLFW_KEY_P) == GLFW_PRESS) {
+      cube->getComponent<Transform>()->rotation += glm::vec3(0.0f, 0.0f, 1.0f);
+      cube->getComponent<Transform>()->rotationAngle = glm::radians(0.025f);
+    }
+
+    //cout << "transform: " << "[" << _transform->position.x << ", " << _transform->position.y << ", " << _transform->position.z << ", "  << endl;
   }
 
 private:
@@ -34,49 +45,19 @@ private:
   //}
 
   void handleKeyboard() {
-    if (glfwGetKey(_window, GLFW_KEY_W) == GLFW_PRESS)
+   /* if (glfwGetKey(_window, GLFW_KEY_W) == GLFW_PRESS)
       _transform->position += _movementSpeed * _camera->cameraFront();
     if (glfwGetKey(_window, GLFW_KEY_S) == GLFW_PRESS)
       _transform->position -= _movementSpeed * _camera->cameraFront();
     if (glfwGetKey(_window, GLFW_KEY_A) == GLFW_PRESS)
       _transform->position -= glm::normalize(glm::cross(_camera->cameraFront(), _camera->cameraUp())) * _movementSpeed;
     if (glfwGetKey(_window, GLFW_KEY_D) == GLFW_PRESS)
-      _transform->position += glm::normalize(glm::cross(_camera->cameraFront(), _camera->cameraUp())) * _movementSpeed;
+      _transform->position += glm::normalize(glm::cross(_camera->cameraFront(), _camera->cameraUp())) * _movementSpeed;*/
+
+
   }
 
   void handleMouse() {
-    glfwGetCursorPos(_window, &cursorX, &cursorY);
-
-    if (firstMouse)
-    {
-      cursorlastX = cursorX;
-      cursorlastY = cursorY;
-      firstMouse = false;
-    }
-
-
-    float xoffset = cursorX - cursorlastX;
-    float yoffset = cursorY - cursorlastY;
-    cursorlastX = cursorX;
-    cursorlastY = cursorY;
-
-    float sensitivity = 0.2;
-    xoffset *= sensitivity;
-    yoffset *= sensitivity;
-
-    yaw += xoffset;
-    pitch += yoffset;
-
-    if (pitch > 89.0f)
-      pitch = 89.0f;
-    if (pitch < -89.0f)
-      pitch = -89.0f;
-
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    _camera->_cameraFront = glm::normalize(front);
   }
 
   //todo to be removed --------------
@@ -87,18 +68,6 @@ private:
   GLFWwindow* _window;
   Camera* _camera;
 
-  // yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
-  float yaw = -90.0f;
-  float pitch = 0.0f;
 
-  double cursorX;
-  double cursorY;
-
-  float cursorlastX;
-  float cursorlastY;
-
-  float cursorOffsetX;
-  double cursorOffsetY;
-
-  bool firstMouse = true;
+  const BlfObject* cube;
 };

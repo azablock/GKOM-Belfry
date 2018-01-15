@@ -39,7 +39,7 @@ protected:
 
 TEST_F(BlfObjectFactoryManagerTest, initTest) {
   //given
-  auto fppActor = BlfObjectFactoryManager::instance().newInstanceFrom<FppActorFactory>();
+  auto fppActor = BlfObjectFactoryManager::instance().get<FppActorFactory>()->newInstance();
   
   //when
 

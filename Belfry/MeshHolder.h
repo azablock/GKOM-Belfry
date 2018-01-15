@@ -27,11 +27,8 @@ public:
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)0);
     glEnableVertexAttribArray(0);
    
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, normal));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, textureCoordinates));
     glEnableVertexAttribArray(1);
-    
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, textureCoordinates));
-    glEnableVertexAttribArray(2);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -47,41 +44,73 @@ public:
 
     auto fppActor = BlfWorld::instance().getBlfObjectByTag("FppActor");
     _camera = fppActor->getComponent<Camera>();
-    _transform = fppActor->getComponent<Transform>();
+    _transform = parent()->getComponent<Transform>();
   }
 
   const void update() {
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, mesh->texture.id);
-    glUniform1i(glGetUniformLocation(shader->id(), "Texture0"), 0);
-    
-    shader->use();
-    
-    //-------------------------
-    GLuint modelLoc = glGetUniformLocation(shader->id(), "model");
-    GLuint viewLoc = glGetUniformLocation(shader->id(), "view");
-    GLuint projLoc = glGetUniformLocation(shader->id(), "projection");
-   
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(_camera->projection()));
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(_camera->view()));
-    //-------------------------
-
-    glBindVertexArray(vao);
- 
-    //-------------------------
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->position));
-    glm::mat4 modelTrans;
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelTrans));
-    //-------------------------
-
-    glDrawElements(GL_TRIANGLES, mesh->indices.size(), GL_UNSIGNED_INT, 0);
-    glBindVertexArray(0);
+    if (parent()->tag().compare("FppActor")) {
+      draw();
+    }
+    else {
+      transform();
+    }
   }
 
   Mesh* mesh;
   Shader* shader;
 
 private:
+  
+
+  void transform() {
+    glPushMatrix();
+    
+    glLoadIdentity();
+
+    auto position = _transform->position;
+    glTranslatef(position.x, position.y, position.z);
+
+    auto rotation = _transform->rotation;
+    auto angle = _transform->rotationAngle;
+    glRotatef(angle, rotation.x, rotation.y, rotation.z);
+
+    auto scale = _transform->scale;
+    glScalef(scale.x, scale.y, scale.z);
+
+    draw();
+
+    glPopMatrix();
+  }
+
+  void draw() {
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, mesh->texture.id);
+    glUniform1i(glGetUniformLocation(shader->id(), "Texture0"), 0);
+
+    shader->use();
+
+    //-------------------------
+    GLuint modelLoc = glGetUniformLocation(shader->id(), "model");
+    GLuint viewLoc = glGetUniformLocation(shader->id(), "view");
+    GLuint projLoc = glGetUniformLocation(shader->id(), "projection");
+
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(_camera->projection()));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(_camera->view()));
+    //-------------------------
+
+    glBindVertexArray(vao);
+
+    //-------------------------
+    glm::mat4 modelTrans;
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelTrans));
+    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->transformModel));
+    //-------------------------
+
+    //glDrawArrays(GL_TRIANGLES, 0, (GLuint)mesh->vertices.size() * 5); // 5x GLfloat
+    glDrawElements(GL_TRIANGLES, mesh->indices.size(), GL_UNSIGNED_INT, 0);
+    glBindVertexArray(0);
+  }
+
   GLuint vao;
   GLuint vbo;
   GLuint ebo;

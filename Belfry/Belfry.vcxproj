@@ -163,6 +163,8 @@
     <ClInclude Include="BlfWorldInitializer.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Contants.h" />
+    <ClInclude Include="CubeFactory.h" />
+    <ClInclude Include="CubeMeshFactory.h" />
     <ClInclude Include="RecangleFactory.h" />
     <ClInclude Include="FppActorFactory.h" />
     <ClInclude Include="DefaultBlfWorldInitializer.h" />

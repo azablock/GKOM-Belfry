@@ -6,6 +6,7 @@
 #include "BlfObjectFactory.h"
 #include "FppActorFactory.h"
 #include "RecangleFactory.h"
+#include "CubeFactory.h"
 
 class BlfObjectFactoryManager : public Singleton<BlfObjectFactoryManager> {
 public:
@@ -16,11 +17,17 @@ public:
 
     add<FppActorFactory>();
     add<RecangleFactory>();
+    add<CubeFactory>();
   }
 
-  template <typename T> BlfObject* newInstanceFrom() {
+  template <typename T> T* get() const {
+    auto iterator = _factories.find(typeid(T));
+    return iterator != std::end(_factories) ? dynamic_cast<T*>(iterator->second) : nullptr;
+  }
+
+  template <typename T> BlfObject* newInstanceFrom(string tag = "") {
     BlfObjectFactory* factory = get<T>();
-    return factory->newInstance();
+    return factory->newInstance(tag);
   }
 
 private:
@@ -30,8 +37,5 @@ private:
     _factories[typeid(T)] = new T();
   }
 
-  template <typename T> T* get() const {
-    auto iterator = _factories.find(typeid(T));
-    return iterator != std::end(_factories) ? dynamic_cast<T*>(iterator->second) : nullptr;
-  }
+  
 };

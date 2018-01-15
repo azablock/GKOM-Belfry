@@ -16,7 +16,7 @@ public:
     _objects.clear();
   }
 
-  const BlfObject* add(BlfObject* object) {
+  BlfObject* add(BlfObject* object) {
     string tag = object->tag();
 
     _objects.push_back(object);
@@ -28,36 +28,40 @@ public:
     return object;
   }
 
-  const void addFrom(BlfObjectFactory* factory) {
-    _objects.push_back(factory->newInstance());
+  BlfObject* addFrom(BlfObjectFactory* factory, std::string tag = "") {
+    auto object = factory->newInstance(tag);
+    _objects.push_back(object);
+
+    return object;
   }
 
-  const void awake() const {
+  void awake() const {
     for (auto const& object : _objects)
       object->awake();
   }
 
-  const void update() const {
+  void update() const {
     for (auto const& object : _objects)
       object->update();
   }
 
-  const void lateUpdate() const {
+  void lateUpdate() const {
     for (auto const& object : _objects)
       object->lateUpdate();
   }
 
-  const void exit() {
+  void exit() {
     _isAlive = false;
   }
 
-  const bool isAlive() const {
+  bool isAlive() const {
     return _isAlive;
   }
 
-  const BlfObject* getBlfObjectByTag(string tag) {
+  BlfObject* getBlfObjectByTag(string tag) const {
     auto iterator = _objectsByTags.find(tag);
-    return iterator != std::end(_objectsByTags) ? iterator->second : nullptr;
+    assert(iterator != std::end(_objectsByTags));
+    return iterator->second;
   }
 
 private:
