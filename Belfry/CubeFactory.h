@@ -13,6 +13,7 @@ class CubeFactory : public BlfObjectFactory {
       ->addComponent<Transform>()
       ->addComponent<MeshHolder>();
 
+    cube->getComponent<MeshHolder>()->drawMode = GL_TRIANGLES;
     cube->getComponent<MeshHolder>()->mesh = mesh;
     cube->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
 

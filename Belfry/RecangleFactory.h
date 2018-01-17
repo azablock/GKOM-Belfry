@@ -15,6 +15,7 @@ private:
       ->addComponent<Transform>()
       ->addComponent<MeshHolder>();
 
+    rectangle->getComponent<MeshHolder>()->drawMode = GL_TRIANGLES;
     rectangle->getComponent<MeshHolder>()->mesh = mesh;
     rectangle->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
 

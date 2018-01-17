@@ -79,6 +79,9 @@ public:
     if (glfwGetKey(_window, GLFW_KEY_SPACE) == GLFW_PRESS) {
       up_down = 1;
     }
+    else if (glfwGetKey(_window, GLFW_KEY_C) == GLFW_PRESS) {
+      up_down = -1;
+    }
 
     glm::mat4 mat = _view;
     //row major
@@ -91,7 +94,7 @@ public:
                               //read :http://in2gpu.com/2015/05/17/view-matrix/
     _transform->position += (-dz * forward + dx * strafe) * speed;
 
-    _transform->position.z += up_down * speed;
+    _transform->position.y += up_down * speed;
   }
 
   void updateCameraState() {
@@ -115,10 +118,6 @@ public:
 
     // cout << "pitch: " << pitch << ", yaw:" << yaw << endl;
   }
-
- /* void changeLookDirection(glm::vec3 delta) {
-    _lookDirection += delta;
-  }*/
 
   glm::mat4 view() {
     return _view;

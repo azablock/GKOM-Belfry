@@ -61,6 +61,9 @@
     <Filter Include="Header Files\model\window">
       <UniqueIdentifier>{76660995-ed97-438e-80ab-a6513b788a10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\model\animation">
+      <UniqueIdentifier>{caba24de-2aca-47b7-a460-72063f36b491}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -149,6 +152,24 @@
     </ClInclude>
     <ClInclude Include="CubeMeshFactory.h">
       <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CylinderMeshFactory .h">
+      <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereMeshFactory.h">
+      <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Header Files\model\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationAnimation.h">
+      <Filter>Header Files\model\animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

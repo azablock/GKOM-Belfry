@@ -51,7 +51,7 @@ public:
     };
 
     Texture texture;
-    texture.imagePath = "Brick1.png";
+    texture.imagePath = "Stone1.png";
 
     mesh->vertices = vertices; 
     mesh->indices.assign(indices, indices + 6);

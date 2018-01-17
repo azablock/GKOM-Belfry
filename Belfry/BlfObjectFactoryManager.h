@@ -7,6 +7,7 @@
 #include "FppActorFactory.h"
 #include "RecangleFactory.h"
 #include "CubeFactory.h"
+#include "SphereFactory.h"
 
 class BlfObjectFactoryManager : public Singleton<BlfObjectFactoryManager> {
 public:
@@ -18,6 +19,7 @@ public:
     add<FppActorFactory>();
     add<RecangleFactory>();
     add<CubeFactory>();
+    add<SphereFactory>();
   }
 
   template <typename T> T* get() const {

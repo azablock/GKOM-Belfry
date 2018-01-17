@@ -153,6 +153,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animator.h" />
     <ClInclude Include="BlfComponent.h" />
     <ClInclude Include="BlfComponentBuilder.h" />
     <ClInclude Include="BlfObject.h" />
@@ -165,6 +167,7 @@
     <ClInclude Include="Contants.h" />
     <ClInclude Include="CubeFactory.h" />
     <ClInclude Include="CubeMeshFactory.h" />
+    <ClInclude Include="CylinderMeshFactory .h" />
     <ClInclude Include="RecangleFactory.h" />
     <ClInclude Include="FppActorFactory.h" />
     <ClInclude Include="DefaultBlfWorldInitializer.h" />
@@ -172,8 +175,11 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshHolder.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="RotationAnimation.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SphereMeshFactory.h" />
+    <ClInclude Include="SphereFactory.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="RectangleMeshFactory.h" />
