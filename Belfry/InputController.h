@@ -13,26 +13,14 @@ public:
     _window = Singleton<WindowContainer>::instance().window;
     _movementSpeed = 0.02f;
     
-    
     //to tez dziala bo mamy w GLWindowContainer glfwPollEvents();
     //  glfwSetCursorPosCallback(_window, mouseMovementCallback);
     //glfwSetKeyCallback(this->_glWindowContainer->window(), handleInput);
-
-
-    cube = BlfWorld::instance().getBlfObjectByTag("Cube");
   }
 
   const void update() {
     handleMouse();
     handleKeyboard();
-
-
-    if (glfwGetKey(_window, GLFW_KEY_P) == GLFW_PRESS) {
-      cube->getComponent<Transform>()->rotation += glm::vec3(0.0f, 0.0f, 1.0f);
-      cube->getComponent<Transform>()->rotationAngle = glm::radians(0.025f);
-    }
-
-    //cout << "transform: " << "[" << _transform->position.x << ", " << _transform->position.y << ", " << _transform->position.z << ", "  << endl;
   }
 
 private:
@@ -67,7 +55,4 @@ private:
   Transform* _transform;
   GLFWwindow* _window;
   Camera* _camera;
-
-
-  const BlfObject* cube;
 };

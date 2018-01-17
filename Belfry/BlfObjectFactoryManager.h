@@ -8,6 +8,8 @@
 #include "RecangleFactory.h"
 #include "CubeFactory.h"
 #include "SphereFactory.h"
+#include "BellBodyFactory.h"
+#include "BellTongueFactory.h"
 
 class BlfObjectFactoryManager : public Singleton<BlfObjectFactoryManager> {
 public:
@@ -20,6 +22,8 @@ public:
     add<RecangleFactory>();
     add<CubeFactory>();
     add<SphereFactory>();
+    add<BellBodyFactory>();
+    add<BellTongueFactory>();
   }
 
   template <typename T> T* get() const {
@@ -38,6 +42,4 @@ private:
   template <typename T> void add() {
     _factories[typeid(T)] = new T();
   }
-
-  
 };

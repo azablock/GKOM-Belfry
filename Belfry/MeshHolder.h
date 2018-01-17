@@ -81,7 +81,6 @@ private:
     glPrimitiveRestartIndex(GL_PRIMITIVE_RESTART_FIXED_INDEX);
     //----------------
 
-
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(_transform->transformModel));
 
     //glDrawArrays(GL_TRIANGLES, 0, (GLuint)mesh->vertices.size() * 5); // 5x GLfloat

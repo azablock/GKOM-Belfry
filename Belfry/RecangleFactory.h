@@ -9,7 +9,7 @@ class RecangleFactory : public BlfObjectFactory {
 private:
   BlfObject* fill(BlfObject* rectangle) const {
     auto rectangleMeshFactory = new RectangleMeshFactory();
-    auto mesh = rectangleMeshFactory->newInstance();
+    auto mesh = rectangleMeshFactory->newInstance("Brick1.png");
 
     rectangle
       ->addComponent<Transform>()

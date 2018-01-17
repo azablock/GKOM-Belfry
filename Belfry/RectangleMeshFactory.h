@@ -4,8 +4,7 @@
 
 class RectangleMeshFactory : public MeshFactory {
 public:
-
-  Mesh* newInstance() {
+  Mesh* newInstance(std::string imagePath) {
     auto mesh = new Mesh();
     
    // GLfloat vertices[] = {
@@ -51,7 +50,7 @@ public:
     };
 
     Texture texture;
-    texture.imagePath = "Stone1.png";
+    texture.imagePath = imagePath;
 
     mesh->vertices = vertices; 
     mesh->indices.assign(indices, indices + 6);

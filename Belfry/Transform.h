@@ -26,10 +26,6 @@ public:
       transform = glm::translate(transform, position);
 
     //rotate
-
-
-
-
     if (glm::length(rotation) != 0.0f) {
       transform = glm::translate(transform, rotationCenter);
       transform = glm::rotate(transform, rotationAngle, rotation);

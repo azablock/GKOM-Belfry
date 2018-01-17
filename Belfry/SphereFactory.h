@@ -9,9 +9,7 @@ class SphereFactory : public BlfObjectFactory {
 
   BlfObject* fill(BlfObject* sphere) const {
     auto sphereMeshFactory = new SphereMeshFactory();
-    auto mesh = sphereMeshFactory->newInstance();
-
-    sphere->addComponent<Transform>();
+    auto mesh = sphereMeshFactory->newInstance(imagePath);
 
     sphere
       ->addComponent<Transform>()
@@ -22,6 +20,7 @@ class SphereFactory : public BlfObjectFactory {
     sphere->getComponent<MeshHolder>()->mesh = mesh;
     sphere->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
 
+    //todo move to initializer
     auto animator = sphere->getComponent<Animator>();
     
     Animation* rotationAnimationX = new RotationAnimation(3.0f, glm::vec3(1.0f, 0.0f, 0.0f));
@@ -29,7 +28,11 @@ class SphereFactory : public BlfObjectFactory {
 
     animator->addToChain(rotationAnimationX);
     animator->addToChain(rotationAnimationY);
+    //-----------------------------------
 
     return sphere;
   }
+
+  //todo refactor
+  std::string imagePath = "Brick1.png";
 };

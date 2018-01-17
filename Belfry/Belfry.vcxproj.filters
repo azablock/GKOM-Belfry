@@ -171,6 +171,15 @@
     <ClInclude Include="RotationAnimation.h">
       <Filter>Header Files\model\animation</Filter>
     </ClInclude>
+    <ClInclude Include="BellBodyFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="BellTongueFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="PendulumAnimation.h">
+      <Filter>Header Files\model\animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -207,13 +216,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="StoneRoad.jpg">
-      <Filter>Resource Files\texture</Filter>
-    </Image>
     <Image Include="Brick1.png">
       <Filter>Resource Files\texture</Filter>
     </Image>
-    <Image Include="iipw.png">
+    <Image Include="Stone1.png">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="StoneRoad.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="StoneRoad2.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="gridBlackWhite.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="Wood1.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="Brass1.jpg">
       <Filter>Resource Files\texture</Filter>
     </Image>
   </ItemGroup>

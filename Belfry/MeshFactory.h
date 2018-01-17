@@ -5,5 +5,5 @@
 
 class MeshFactory {
 public:
-  virtual Mesh* newInstance() = 0;
+  virtual Mesh* newInstance(std::string imagePath) = 0;
 };

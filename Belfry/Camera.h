@@ -24,36 +24,10 @@ public:
     _transform = fppActor->getComponent<Transform>();
   }
 
-  //http://in2gpu.com/2016/02/26/opengl-fps-camera/
   const void update() {
     keyboard();
     mouse();
     updateCameraState();
-
-  }
-
-  void mouse() {
-    double x, y;
-    glfwGetCursorPos(_window, &x, &y);
-
-    //always compute delta
-    //mousePosition is the last mouse position
-    glm::vec2 mouse_delta = glm::vec2(x, y) - lastMousePos;
-
-    const float mouseX_Sensitivity = 0.012f;
-    const float mouseY_Sensitivity = 0.012f;
-    //note that yaw and pitch must be converted to radians.
-    //this is done in UpdateView() by glm::rotate
-    yaw += mouseX_Sensitivity * mouse_delta.x;
-    pitch += mouseY_Sensitivity * mouse_delta.y;
-
-    //
-    if (pitch > 89.0f)
-      pitch = 89.0f;
-    if (pitch < -89.0f)
-      pitch = -89.0f;
-
-    lastMousePos = glm::vec2(x, y);
   }
 
   void keyboard() {
@@ -84,30 +58,45 @@ public:
     }
 
     glm::mat4 mat = _view;
-    //row major
+    
     glm::vec3 forward(mat[0][2], mat[1][2], mat[2][2]);
     glm::vec3 strafe(mat[0][0], mat[1][0], mat[2][0]);
 
-    const float speed = 0.025f;//how fast we move
+    const float speed = 0.025f;
 
-                              //forward vector must be negative to look forward. 
-                              //read :http://in2gpu.com/2015/05/17/view-matrix/
     _transform->position += (-dz * forward + dx * strafe) * speed;
-
     _transform->position.y += up_down * speed;
   }
 
+  void mouse() {
+    double x, y;
+    glfwGetCursorPos(_window, &x, &y);
+
+    glm::vec2 mouse_delta = glm::vec2(x, y) - lastMousePos;
+
+    const float mouseX_Sensitivity = 0.012f;
+    const float mouseY_Sensitivity = 0.012f;
+
+    yaw += mouseX_Sensitivity * mouse_delta.x;
+    pitch += mouseY_Sensitivity * mouse_delta.y;
+
+    if (pitch > 89.0f)
+      pitch = 89.0f;
+    if (pitch < -89.0f)
+      pitch = -89.0f;
+
+    lastMousePos = glm::vec2(x, y);
+  }
+
   void updateCameraState() {
-    glm::mat4 matRoll = glm::mat4(1.0f);//identity matrix; 
-    glm::mat4 matPitch = glm::mat4(1.0f);//identity matrix
-    glm::mat4 matYaw = glm::mat4(1.0f);//identity matrix
+    glm::mat4 matRoll = glm::mat4(1.0f);;
+    glm::mat4 matPitch = glm::mat4(1.0f);
+    glm::mat4 matYaw = glm::mat4(1.0f);
 
-                                       //roll, pitch and yaw are used to store our angles in our class
     matRoll = glm::rotate(matRoll, 0.0f, glm::vec3(0.0f, 0.0f, 1.0f));//roll
-    matPitch = glm::rotate(matPitch, pitch, glm::vec3(1.0f, 0.0f, 0.0f));
-    matYaw = glm::rotate(matYaw, yaw, glm::vec3(0.0f, 1.0f, 0.0f));
+    matPitch = glm::rotate(matPitch, pitch, glm::vec3(1.0f, 0.0f, 0.0f));//pitche
+    matYaw = glm::rotate(matYaw, yaw, glm::vec3(0.0f, 1.0f, 0.0f));//yaw
 
-    //order matters
     glm::mat4 rotate = matRoll * matPitch * matYaw;
 
     glm::mat4 translate = glm::mat4(1.0f);
@@ -115,8 +104,6 @@ public:
 
     _view = rotate * translate;
     _projection = glm::perspective(_fov, _aspect, 0.1f, 100.0f);
-
-    // cout << "pitch: " << pitch << ", yaw:" << yaw << endl;
   }
 
   glm::mat4 view() {

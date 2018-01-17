@@ -4,7 +4,7 @@
 
 class CubeMeshFactory : public MeshFactory {
 public:
-  Mesh* newInstance() {
+  Mesh* newInstance(std::string imagePath) {
     auto mesh = new Mesh();
 
     GLfloat halfSideLength = 0.5f;
@@ -89,9 +89,6 @@ public:
     glm::vec2 thirdVertexTextureCoordinate = glm::vec2(textureMultiplier, textureMultiplier);
     glm::vec2 forthVertexTextureCoordinate = glm::vec2(0, textureMultiplier);
 
-    //http://in2gpu.com/2015/07/22/texture-mapping/
-
-    //SFERA !!! http://in2gpu.com/2015/08/25/texture-mapping-continued/
     std::vector<Vertex> vertices = {
       //front
       Vertex(glm::vec3(-1.0, -1.0, 1.0), firstVertexTextureCoordinate),
@@ -139,10 +136,9 @@ public:
       20, 21, 22, 20, 22, 23 }; //bottom
 
     Texture texture;
-    texture.imagePath = "Brick1.png";
+    texture.imagePath = imagePath;
 
     mesh->vertices = vertices;
-    //mesh->indices.assign(indices, indices + 36); //todo sizeOf
     mesh->indices = indices;
     mesh->texture = texture;
 

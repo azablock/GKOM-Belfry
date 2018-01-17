@@ -9,7 +9,7 @@
 class SphereMeshFactory : public MeshFactory {
 public:
 
-  Mesh* newInstance() {
+  Mesh* newInstance(std::string imagePath) {
     auto mesh = new Mesh();
    
     std::vector<Vertex> vertices;
@@ -63,7 +63,7 @@ public:
     mesh->indices = indices;
 
     Texture texture;
-    texture.imagePath = "Brick1.png";
+    texture.imagePath = imagePath;
 
     mesh->texture = texture;
 
