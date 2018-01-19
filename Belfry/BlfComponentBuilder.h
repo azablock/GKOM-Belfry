@@ -5,7 +5,6 @@
 
 template <typename T> class BlfComponentBuilder {
 public:
-
   const T* build() {
     return _instance;
   };

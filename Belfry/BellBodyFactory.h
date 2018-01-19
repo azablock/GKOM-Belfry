@@ -1,25 +1,14 @@
 #pragma once
 
 #include "BlfObjectFactory.h"
-#include "CubeMeshFactory.h"
+#include "CylinderFactory.h"
 
 class BellBodyFactory : public BlfObjectFactory {
 public:
-  std::string imagePath;
-
-private:
   BlfObject* fill(BlfObject* bellBody) const {
-    auto cubeMeshFactory = new CubeMeshFactory();
-    auto mesh = cubeMeshFactory->newInstance(imagePath);
+    BlfObjectFactoryManager::instance().get<CylinderFactory>()->fill(bellBody);
 
-    bellBody
-      ->addComponent<Transform>()
-      ->addComponent<MeshHolder>()
-      ->addComponent<Animator>();
-
-    bellBody->getComponent<MeshHolder>()->drawMode = GL_TRIANGLES;
-    bellBody->getComponent<MeshHolder>()->mesh = mesh;
-    bellBody->getComponent<MeshHolder>()->shader = new Shader("sampleVert.vert", "sampleFrag.frag");
+    bellBody->addComponent<Animator>();
 
     setupAnimation(bellBody->getComponent<Animator>());
 
@@ -27,7 +16,7 @@ private:
   }
 
   void setupAnimation(Animator* animator) const {
-    Animation* animation = new RotationAnimation(2.0f, glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    Animation* animation = new PendulumAnimation(glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 2.0f, 0.0f), 0.2f);
     animator->addToChain(animation);
   }
 };

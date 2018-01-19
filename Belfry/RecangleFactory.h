@@ -6,10 +6,10 @@
 #include "RectangleMeshFactory.h"
 
 class RecangleFactory : public BlfObjectFactory {
-private:
+public:
   BlfObject* fill(BlfObject* rectangle) const {
     auto rectangleMeshFactory = new RectangleMeshFactory();
-    auto mesh = rectangleMeshFactory->newInstance("Brick1.png");
+    auto mesh = rectangleMeshFactory->newInstance("GrayStoneRoad1.jpg");
 
     rectangle
       ->addComponent<Transform>()

@@ -2,6 +2,7 @@
 
 #include <list>
 #include <map>
+#include <assert.h>
 #include "BlfObject.h"
 #include "BlfObjectFactory.h"
 #include <GLFW/glfw3.h>

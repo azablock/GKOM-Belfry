@@ -4,16 +4,16 @@
 #include "Animation.h"
 #include "Transform.h"
 
-class PendulumAnimation : public Animation {
+class RopePulleyAnimation : public Animation {
 public:
-  PendulumAnimation(glm::vec3 rotationAxis, glm::vec3 rotationPoint) {
+  RopePulleyAnimation(glm::vec3 rotationAxis, glm::vec3 rotationPoint) {
     this->length = 3.0f;
     this->amplitude = 0.5f;
     this->rotationAxis = rotationAxis;
     this->rotationPoint = rotationPoint;
   }
 
-  PendulumAnimation(glm::vec3 rotationAxis, glm::vec3 rotationPoint, GLfloat amplitude) {
+  RopePulleyAnimation(glm::vec3 rotationAxis, glm::vec3 rotationPoint, GLfloat amplitude) {
     this->length = 3.0f;
     this->amplitude = amplitude;
     this->rotationAxis = rotationAxis;

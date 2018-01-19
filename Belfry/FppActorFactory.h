@@ -7,7 +7,7 @@
 #include "Movement.h"
 
 class FppActorFactory : public BlfObjectFactory {
-private:
+public:
   BlfObject* fill(BlfObject* fppActor) const {
     fppActor->addComponent<Transform>()
             ->addComponent<Camera>()

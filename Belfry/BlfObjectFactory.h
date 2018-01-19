@@ -9,6 +9,5 @@ public:
     return fill(object);
   };
 
-protected:
   virtual BlfObject* fill(BlfObject* object) const = 0;
 };

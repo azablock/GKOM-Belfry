@@ -4,12 +4,6 @@
 #include <typeindex>
 #include "Singleton.h"
 #include "BlfObjectFactory.h"
-#include "FppActorFactory.h"
-#include "RecangleFactory.h"
-#include "CubeFactory.h"
-#include "SphereFactory.h"
-#include "BellBodyFactory.h"
-#include "BellTongueFactory.h"
 
 class BlfObjectFactoryManager : public Singleton<BlfObjectFactoryManager> {
 public:
@@ -17,17 +11,14 @@ public:
 
   BlfObjectFactoryManager() {
     _factories = {};
+  }
 
-    add<FppActorFactory>();
-    add<RecangleFactory>();
-    add<CubeFactory>();
-    add<SphereFactory>();
-    add<BellBodyFactory>();
-    add<BellTongueFactory>();
+  template <typename T> void add() {
+    _factories[typeid(T)] = new T();
   }
 
   template <typename T> T* get() const {
-    auto iterator = _factories.find(typeid(T));
+    auto iterator = _factories.find(typeid(T));   
     return iterator != std::end(_factories) ? dynamic_cast<T*>(iterator->second) : nullptr;
   }
 
@@ -39,7 +30,5 @@ public:
 private:
   map<type_index, BlfObjectFactory*> _factories;
 
-  template <typename T> void add() {
-    _factories[typeid(T)] = new T();
-  }
+
 };

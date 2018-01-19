@@ -57,7 +57,7 @@ public:
 
   Mesh* mesh;
   Shader* shader;
-  GLenum drawMode;
+  GLenum drawMode = GL_TRIANGLES;
 
 private:
   void draw() {

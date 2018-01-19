@@ -156,6 +156,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Animator.h" />
     <ClInclude Include="BellBodyFactory.h" />
+    <ClInclude Include="BellHeadFactory.h" />
     <ClInclude Include="BellTongueFactory.h" />
     <ClInclude Include="BlfComponent.h" />
     <ClInclude Include="BlfComponentBuilder.h" />
@@ -169,7 +170,8 @@
     <ClInclude Include="Contants.h" />
     <ClInclude Include="CubeFactory.h" />
     <ClInclude Include="CubeMeshFactory.h" />
-    <ClInclude Include="CylinderMeshFactory .h" />
+    <ClInclude Include="CylinderFactory.h" />
+    <ClInclude Include="CylinderMeshFactory.h" />
     <ClInclude Include="PendulumAnimation.h" />
     <ClInclude Include="RecangleFactory.h" />
     <ClInclude Include="FppActorFactory.h" />
@@ -178,6 +180,10 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshHolder.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="RopeAnimation.h" />
+    <ClInclude Include="RopeFactory.h" />
+    <ClInclude Include="RopePulleyAnimation.h" />
+    <ClInclude Include="RopePulleyFactory.h" />
     <ClInclude Include="RotationAnimation.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Singleton.h" />
@@ -198,7 +204,6 @@
     <ClCompile Include="BlfObjectTest.cpp" />
     <ClCompile Include="BlfWorld.cpp" />
     <ClCompile Include="glmTest.cpp" />
-    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="TransformTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -213,7 +218,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Brass1.jpg" />
+    <Image Include="Brick1.jpg" />
     <Image Include="Brick1.png" />
+    <Image Include="DarkMetal1.png" />
+    <Image Include="GrayStoneRoad1.jpg" />
     <Image Include="gridBlackWhite.jpg" />
     <Image Include="Stone1.png" />
     <Image Include="StoneRoad.jpg" />

@@ -153,9 +153,6 @@
     <ClInclude Include="CubeMeshFactory.h">
       <Filter>Header Files\model\mesh\mesh_factory</Filter>
     </ClInclude>
-    <ClInclude Include="CylinderMeshFactory .h">
-      <Filter>Header Files\model\mesh\mesh_factory</Filter>
-    </ClInclude>
     <ClInclude Include="SphereFactory.h">
       <Filter>Header Files\object\factory</Filter>
     </ClInclude>
@@ -180,6 +177,27 @@
     <ClInclude Include="PendulumAnimation.h">
       <Filter>Header Files\model\animation</Filter>
     </ClInclude>
+    <ClInclude Include="CylinderFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CylinderMeshFactory.h">
+      <Filter>Header Files\model\mesh\mesh_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="BellHeadFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="RopePulleyFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="RopePulleyAnimation.h">
+      <Filter>Header Files\model\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeAnimation.h">
+      <Filter>Header Files\model\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeFactory.h">
+      <Filter>Header Files\object\factory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -202,9 +220,6 @@
     </ClCompile>
     <ClCompile Include="glmTest.cpp">
       <Filter>Source Files\test</Filter>
-    </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -234,7 +249,16 @@
     <Image Include="Wood1.jpg">
       <Filter>Resource Files\texture</Filter>
     </Image>
+    <Image Include="Brick1.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
     <Image Include="Brass1.jpg">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="DarkMetal1.png">
+      <Filter>Resource Files\texture</Filter>
+    </Image>
+    <Image Include="GrayStoneRoad1.jpg">
       <Filter>Resource Files\texture</Filter>
     </Image>
   </ItemGroup>

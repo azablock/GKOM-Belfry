@@ -7,7 +7,6 @@ class CubeFactory : public BlfObjectFactory {
 public:  //todo refactor
   std::string imagePath = "Brick1.png";
 
-private:
   BlfObject* fill(BlfObject* cube) const {
     auto cubeMeshFactory = new CubeMeshFactory();
     auto mesh = cubeMeshFactory->newInstance(imagePath);

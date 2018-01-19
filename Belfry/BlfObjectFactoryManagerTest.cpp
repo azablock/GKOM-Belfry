@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include "gtest/gtest.h"
 #include "BlfObjectFactoryManager.h"
+#include "FppActorFactory.h"
 
 // COS SIE WALI Z LINKOWANIEM OPEN_GL'A
 
